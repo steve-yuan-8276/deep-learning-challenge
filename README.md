@@ -28,19 +28,16 @@ In this project, we use machine learning techniques, specifically neural network
 
 ## Projects Steps：
 
-### Part 1: Initial attempt:
+### Step 1: Initial attempt:
 
 1. **Data Preprocessing**: Prepare and clean the dataset to ensure the model receives well-structured input data.
 
 2. **Compile, Train, and Evaluate the Model**: Build, compile, train, and evaluate a neural network model using TensorFlow.
 
-3. **Model Optimization**: Make multiple attempts to optimize the neural network to achieve a target accuracy above 75%.
 
-4. **Model Analysis**: Evaluate and report on the overall performance of the deep learning model.
+### Step 2: Optimize the Model
 
-
-
-### Part 2: Optimize the Model
+Make 3 attempts to optimize the neural network to achieve a target accuracy above 75%.
 
 1. **Adjust Model Parameters**: Optimize the model using at least three of the following techniques:
 
@@ -52,7 +49,9 @@ In this project, we use machine learning techniques, specifically neural network
 
 2. **Evaluate and Save**: Evaluate the optimized model and save it as `AlphabetSoupCharity_Optimization_Trial 1-3`,please check the outputs folders for details.
 
+### Step 3: Model Analysis: 
 
+Evaluate and report on the overall performance of the deep learning model.Please check analysis report for details.
 
 ## Performance Results & Recommendations
 
@@ -61,3 +60,5 @@ In this project, we use machine learning techniques, specifically neural network
     - Optimizing the model by adding more complexity did not significantly improve results.
 
 Given the limited success of deep learning for this problem, a different approach may be more effective. **Ensemble methods**, such as **Random Forest** or **XGBoost**, are well-suited for tabular data and could yield better results by capturing more nuanced relationships between features and reducing overfitting.
+
+Thanks for your times.
