@@ -15,15 +15,15 @@ In this project, we use machine learning techniques, specifically neural network
 
 ## Key Files
 
-- `**AlphabetSoupCharity_Optimization.ipynb**`: The notebook containing the optimized versions of the model.
-- `**deep-learning-challenge.ipynb**`: The notebook for initial data preprocessing, model training, and evaluation.
-- `**Outputs/**`: Directory containing the HDF5 files for different models.
+- `AlphabetSoupCharity_Optimization.ipynb`: The notebook containing the optimized versions of the model.
+- `deep-learning-challenge.ipynb`: The notebook for initial data preprocessing, model training, and evaluation.
+- `Outputs/`: Directory containing the HDF5 files for different models.
 
     - `AlphabetSoupCharity_Trial1.h5`, `AlphabetSoupCharity_Trial2.h5`, `AlphabetSoupCharity_Trial3.h5`: Saved models from each trial.
 
     - `trained_application_model.h5`: Initial trained model.
-- `**Analysis_report.md**`: The analysis report for the deep learning models.
-- `**README.md**`: This readme file, providing an overview of the project.
+- `Analysis_report.md`
+- `README.md`
 
 
 ## Projects Steps：
