@@ -2,41 +2,69 @@
 
 ## Overview
 
-The purpose of this analysis is to create a deep learning model to predict the success of charitable donations based on the features provided in the dataset from Alphabet Soup. The goal was to achieve an accuracy higher than 75% to effectively determine which organizations were more likely to receive funding. The analysis involved preprocessing the dataset, building multiple neural network models, and attempting different optimization strategies to improve model performance.
+The purpose of this analysis is to develop a deep learning model that predicts the success of charitable donations based on the features provided in the dataset from Alphabet Soup. The goal is to achieve an accuracy of 75% or higher, allowing the model to effectively determine which organizations are more likely to receive funding. This analysis includes data preprocessing, the construction and evaluation of multiple neural network models, and attempts to optimize model performance through various strategies.
 
-## Results
 
-### Data Preprocessing
+## Q&A
 
-- **Target Variable**: The target variable for the model is `IS_SUCCESSFUL`, which indicates whether a given charitable donation was successful.
-- **Features**: The features for the model include all other columns after removing the non-beneficial identifiers. These features represent different aspects of the charitable applications, including application types, classifications, and financial information.
-- **Removed Variables**: The non-beneficial ID columns `EIN` and `NAME` were removed from the dataset, as they do not contribute any meaningful information for predicting the success of donations. Additionally, `ASK_AMT` was also dropped as it was determined to not improve model performance.
+This project created two Jupyter Notebooks, including a basic script and an optimized script, aimed at answering the following questions:
 
-### Compiling, Training, and Evaluating the Model
+### Question 1: What variable(s) are the target(s) for your model?
 
-- **Neural Network Model Design**:
+**Answer**: The target variable for the model is `IS_SUCCESSFUL`, which indicates whether a charitable donation was successful. It is a binary classification task where `1` represents a successful donation and `0` represents an unsuccessful one.
 
-    - **Trial 1**: The first model had 2 hidden layers with 128 and 64 neurons, respectively, using ReLU activation functions. This simple architecture was designed to capture basic relationships between features and targets.
+* * *
 
-    - **Trial 2**: The second model added more complexity with 4 hidden layers, having 128, 64, 32, and 16 neurons, respectively, all using ReLU activation functions. This deeper network aimed to capture more intricate relationships in the data.
+### Question 2: What variable(s) are the features for your model?
 
-    - **Trial 3**: The third model used 3 hidden layers with 128, 64, and 32 neurons, respectively, and switched the activation function from ReLU to Tanh. The Tanh activation function was used to test whether it could improve model performance by introducing a different non-linearity.
-- **Model Performance**:
+**Answer**: The feature variables for the model include all the other columns in the dataset after removing the identifier columns. These features are:
 
-    - **Trial 1**: Loss: 0.5606, Accuracy: 72.57%
+- `APPLICATION_TYPE`
+- `AFFILIATION`
+- `CLASSIFICATION`
+- `USE_CASE`
+- `ORGANIZATION`
+- `INCOME_AMT`
+- `ASK_AMT`
+- `STATUS`
+- `SPECIAL_CONSIDERATIONS`
 
-    - **Trial 2**: Loss: 0.5676, Accuracy: 72.51%
+These features represent various categorical and numerical data points that are used to predict the success of a donation.
 
-    - **Trial 3**: Loss: 0.5617, Accuracy: 72.45%
+* * *
 
-    - None of the trials were able to achieve the target model performance of 75% accuracy.
-- **Steps to Increase Performance**:
+### Question 3: What variable(s) should be removed from the input data because they are neither targets nor features?
 
-    - **Adjust Input Data**: In Trial 1, additional columns such as `ASK_AMT` were removed to reduce noise in the data. Rare occurrences in categorical variables were replaced with 'Other' to simplify the feature space.
+**Answer**: The variables that were removed from the input data are:
 
-    - **Add More Layers**: In Trial 2, additional hidden layers were added to the model to increase its capacity and ability to learn complex relationships.
+- `EIN`: An identifier for the organization, which is non-beneficial for prediction purposes.
+- `NAME`: Another identifier, which does not contribute to the prediction task.
+- `ASK_AMT`: This was removed during some trials, as it did not provide value in improving the model's performance and may have added noise to the data.
+* * *
 
-    - **Change Activation Functions**: In Trial 3, the activation function was changed from ReLU to Tanh in an attempt to capture different types of non-linearity.
+### Question 4: How many neurons, layers, and activation functions did you select for your neural network model, and why?
+
+**Answer**:
+
+- **Trial 1**: The model had 2 hidden layers with 128 neurons in the first layer and 64 neurons in the second layer, using ReLU activation functions. This setup was chosen for its simplicity and ability to capture basic relationships.
+- **Trial 2**: The model was expanded to 4 hidden layers with 128, 64, 32, and 16 neurons, respectively, all using ReLU activation functions. The increased complexity aimed to capture more intricate relationships.
+- **Trial 3**: The model had 3 hidden layers with 128, 64, and 32 neurons, and the activation function was switched to Tanh. This was to test whether a different activation function would improve learning and performance.
+* * *
+
+### Question 5: Were you able to achieve the target model performance?
+
+**Answer**: No, the target performance of 75% accuracy was not achieved in any of the trials. The highest accuracy achieved was **72.57%** in Trial 1, with additional complexity in Trials 2 and 3 not significantly improving performance.
+* * *
+
+### Question 6: What steps did you take in your attempts to increase model performance?
+
+**Answer**:
+
+- **Adjusting Input Data**: In Trial 1, columns such as `ASK_AMT` were removed to reduce noise in the data. Rare categories in some features were grouped into a new category, `Other`, to reduce the model's need to learn from sparse categories.
+- **Adding More Layers**: In Trial 2, the model's depth was increased by adding more hidden layers to capture more complex relationships between the features and the target.
+- **Changing Activation Functions**: In Trial 3, the activation function was changed from ReLU to Tanh, which introduces different non-linearities that might help the model learn better representations of the data.
+
+
 
 ### Summary
 
